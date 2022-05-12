@@ -5,10 +5,12 @@
 	<button @click="postData">post</button>
 	<button @click="deleteData">delete</button>
 
-	<ul v-if="datas.type == 'getAll' ? true : false" style="text-align: left" class="font-NanumRegular">
-		<li v-for="i in datas.data" :key="i.id">{{ i }}</li>
-	</ul>
-	<p v-else>{{ datas.data }}</p>
+	<div style="height: 600px; margin-top: 10px; overflow: auto">
+		<ul v-if="datas.type == 'getAll' ? true : false" style="text-align: left" class="font-NanumRegular">
+			<li v-for="i in datas.data" :key="i.id">{{ i }}</li>
+		</ul>
+		<p v-else>{{ datas.data }}</p>
+	</div>
 </template>
 
 <script>
@@ -60,6 +62,7 @@ export default {
 		};
 
 		const deleteData = () => {
+			//HTTP 상태 코드 참고 => https://aloneonahill.com/blog/http-status-codes
 			axios
 				.delete('https://jsonplaceholder.typicode.com/todos/1')
 				.then(res => {
