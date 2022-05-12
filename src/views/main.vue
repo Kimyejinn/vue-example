@@ -1,3 +1,5 @@
 <template>
-  <router-view></router-view>
+	<div class="font-NanumExtraBold">
+		<router-view></router-view>
+	</div>
 </template>
