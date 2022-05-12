@@ -1,28 +1,22 @@
 <template>
-  <div>
-    {{ title }} // tt: {{ tt }}
-    <button @click="clickEvt">{{ BtnNeme }}</button>
-  </div>
+	<div>
+		{{ title }}&nbsp;<button @click="clickEvt">{{ BtnNeme }}</button>
+	</div>
 </template>
 
 <script>
 export default {
-  name: "Button",
-  components: {},
-  props: ["title"],
-  setup(props, { emit }) {
-    console.log(props.title);
+	name: 'Button',
+	components: {},
+	props: ['title'],
+	setup(props, { emit }) {
+		const BtnNeme = props.title + 'Btn';
 
-    const tt = props.title; //testchange
-    console.log(tt);
+		const clickEvt = () => {
+			alert('click');
+		};
 
-    const BtnNeme = props.title + "aa";
-
-    const clickEvt = () => {
-      alert("click");
-    };
-
-    return { clickEvt, BtnNeme, tt };
-  },
+		return { clickEvt, BtnNeme };
+	},
 };
 </script>
