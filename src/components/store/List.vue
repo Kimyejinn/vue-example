@@ -37,7 +37,7 @@ export default {
 		};
 
 		const remove = id => {
-			store.dispatch('List/remove', id);
+			if (confirm('삭제하시겠습니까?')) store.dispatch('List/remove', id);
 		};
 
 		return { add, remove, text, datasObj, datasArr, focusText };
