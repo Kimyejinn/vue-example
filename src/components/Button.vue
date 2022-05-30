@@ -9,7 +9,7 @@ export default {
 	name: 'Button',
 	components: {},
 	props: ['title'],
-	setup(props, { emit }) {
+	setup(props) {
 		const BtnNeme = props.title + 'Btn';
 
 		const clickEvt = () => {
