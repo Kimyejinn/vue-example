@@ -1,4 +1,5 @@
 # vue-project
+### node version 14
 
 네이밍 방법론 : BEM 사용
 
